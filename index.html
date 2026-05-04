@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sophia Ngo — Software Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f172a;
+    --ink-mid: #334155;
+    --ink-light: #64748b;
+    --ink-faint: #94a3b8;
+    --accent: #c2410c;
+    --accent-soft: #fff7ed;
+    --rule: #e2e8f0;
+    --bg: #ffffff;
+    --page-w: 780px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #f1f5f9;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: var(--page-w);
+    min-height: 1040px;
+    background: var(--bg);
+    margin: 32px auto;
+    padding: 48px 52px 44px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.10);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 16px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 22px;
+  }
+
+  .name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .name span {
+    color: var(--accent);
+  }
+
+  .title-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 3px 10px;
+    border-radius: 2px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 8px;
+    display: inline-block;
+  }
+
+  .contact-block {
+    text-align: right;
+    font-size: 11px;
+    color: var(--ink-light);
+    line-height: 1.8;
+    font-family: 'DM Mono', monospace;
+    font-weight: 300;
+  }
+
+  .contact-block a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* ── BODY LAYOUT ── */
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 196px;
+    gap: 28px;
+  }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 20px; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ── EXPERIENCE ── */
+  .job { margin-bottom: 14px; }
+  .job:last-child { margin-bottom: 0; }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1px;
+  }
+
+  .job-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .job-dates {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faint);
+    font-weight: 300;
+    white-space: nowrap;
+  }
+
+  .job-company {
+    font-size: 11.5px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  .job-sub {
+    font-size: 10.5px;
+    color: var(--ink-light);
+    font-style: italic;
+    margin-bottom: 5px;
+  }
+
+  ul.bullets {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul.bullets li {
+    font-size: 11.5px;
+    color: var(--ink-mid);
+    line-height: 1.5;
+    padding-left: 12px;
+    position: relative;
+    margin-bottom: 3px;
+    font-weight: 300;
+  }
+
+  ul.bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 10px;
+    top: 1px;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar .section { margin-bottom: 18px; }
+
+  .skill-group { margin-bottom: 10px; }
+
+  .skill-category {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 4px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .tag {
+    font-size: 10px;
+    background: #f8fafc;
+    border: 1px solid var(--rule);
+    color: var(--ink-mid);
+    padding: 2px 7px;
+    border-radius: 2px;
+    font-family: 'DM Mono', monospace;
+    font-weight: 300;
+  }
+
+  .tag.ai {
+    background: var(--accent-soft);
+    border-color: #fed7aa;
+    color: #9a3412;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-item { margin-bottom: 10px; }
+
+  .edu-degree {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .edu-school {
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 400;
+    margin-top: 1px;
+  }
+
+  .edu-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faint);
+    font-weight: 300;
+    margin-top: 1px;
+  }
+
+  /* ── SUMMARY ── */
+  .summary-text {
+    font-size: 11.5px;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .summary-text strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ── SIDEBAR HIGHLIGHT BOX ── */
+  .highlight-box {
+    background: var(--ink);
+    color: #fff;
+    padding: 14px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+  }
+
+  .highlight-box .hb-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 6px;
+  }
+
+  .highlight-box .hb-items {
+    list-style: none;
+  }
+
+  .highlight-box .hb-items li {
+    font-size: 11px;
+    color: #e2e8f0;
+    line-height: 1.6;
+    font-weight: 300;
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .highlight-box .hb-items li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #fb923c;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      padding: 36px 48px 36px;
+      width: 100%;
+      min-height: unset;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div>
+      <div class="name">Sophia <span>Ngo</span></div>
+      <div class="title-tag">Software Engineer</div>
+    </div>
+    <div class="contact-block">
+      ngo_sophia@icloud.com<br>
+      Silicon Valley, CA &nbsp;·&nbsp; Vietnam &nbsp;·&nbsp; Remote<br>
+      <a href="#">linkedin.com/in/sophia-ngo</a><br>
+      <a href="#">github.com/sophiango</a>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- MAIN COLUMN -->
+    <main>
+
+      <!-- SUMMARY -->
+      <!-- <div class="section">
+        <div class="section-label">Profile</div>
+        <p class="summary-text">
+          Software engineer with <strong>8+ years at Apple</strong> building internal tooling, APIs, and web applications across Music, Media Products, and Vision Pro orgs. Shipped consumer-facing features used by millions and developer-productivity tools that scaled across large engineering teams. Comfortable across the stack — Node.js, Java, Python, React — with a growing focus on <strong>AI-augmented development, automation pipelines, and developer tooling</strong>.
+        </p>
+      </div> -->
+
+      <!-- EXPERIENCE -->
+      <div class="section">
+        <div class="section-label">Experience</div>
+
+        <!-- Job 1 -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Software Engineer — Automation & Tooling</div>
+            <div class="job-dates">2024 – Present</div>
+          </div>
+          <div class="job-company">Apple &nbsp;·&nbsp; Vision Pro Organization</div>
+          <!-- <div class="job-sub">Lab Automation · Cupertino, CA</div> -->
+          <ul class="bullets">
+            <li>Built a <strong>FastAPI + Celery</strong> service that monitors for new tool releases and auto-triggers parallel Ansible-based deployments across Mac mini staging environments - replacing a fully manual lab-admin process.</li>
+            <li>Co-built an internal web app (with Claude-assisted development) aggregating data from multiple sources into a unified searchable interface, cutting engineer/QA lookup time significantly.</li>
+          </ul>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Engineering Manager — SRE & Automation</div>
+            <div class="job-dates">2022 – 2024</div>
+          </div>
+          <div class="job-company">Apple &nbsp;·&nbsp; Software Engineering Lab (SWE Lab)</div>
+          <!-- <div class="job-sub">10,000+ device physical hardware lab · Cupertino, CA</div> -->
+          <ul class="bullets">
+            <li>Led a team of SRE and automation engineers maintaining Apple's largest internal hardware lab at scale.</li>
+            <li>Oversaw Ansible-based host upgrade workflows and lab reliability operations across 10k+ physical devices.</li>
+            <li>Drove a culture shift from reactive to proactive operations by building a cron-based data pipeline pulling from Splunk and other sources into an internal dashboard, giving the team visibility into lab health trends before issues escalated.</li>
+          </ul>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Software Engineer — Apple Media Products</div>
+            <div class="job-dates">2020 – 2022</div>
+          </div>
+          <div class="job-company">Apple &nbsp;·&nbsp; Apple Media Products</div>
+          <!-- <div class="job-sub">Play Activities Data Platform · Cupertino, CA</div> -->
+          <ul class="bullets">
+            <li>Built internal web apps for QA, engineers, and managers to query and validate Play Activities data — replacing manual spreadsheet workflows.</li>
+            <li>Created a one-script local test environment bootstrapper using Minikube, spinning up Kafka, Spark, and Java services as Kube containers for reliable, reproducible QA testing.</li>
+          </ul>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Software Engineer — Apple Music Social</div>
+            <div class="job-dates">2016 – 2020</div>
+          </div>
+          <div class="job-company">Apple &nbsp;·&nbsp; Apple Music</div>
+          <!-- <div class="job-sub">Friends Feature · Cupertino, CA</div> -->
+          <ul class="bullets">
+            <li>As part of a cross-functional team, contributed server-side engineering to <strong>Apple Music Friends</strong> — a social listening feature shipped to millions of users worldwide.</li>
+            <li>Designed and implemented API logic using a <strong>Java API gateway, Node.js backend</strong>, and <strong>Cassandra</strong> for distributed data storage.</li>
+          </ul>
+        </div>
+
+        <!-- Job 5 -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Software Engineering Intern — iCloud ML</div>
+            <div class="job-dates">Summer 2015</div>
+          </div>
+          <div class="job-company">Apple &nbsp;·&nbsp; iCloud</div>
+          <!-- <div class="job-sub">Cupertino, CA</div> -->
+          <ul class="bullets">
+            <li>Developed internal machine learning outlier detection tooling for the iCloud team, helping surface anomalies in large-scale cloud service data.</li>
+          </ul>
+        </div>
+
+        <!-- Job 6 -->
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Software Engineering Intern</div>
+            <div class="job-dates">Summer 2014</div>
+          </div>
+          <div class="job-company">SGI &nbsp;·&nbsp; Silicon Graphics International</div>
+          <!-- <div class="job-sub">Milpitas, CA</div> -->
+          <ul class="bullets">
+            <li>Migrated a production database from Sybase to PostgreSQL, including schema mapping, data migration scripting, and validation testing.</li>
+          </ul>
+        </div>
+
+      </div><!-- /experience -->
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- Highlight -->
+      <div class="highlight-box">
+        <div class="hb-label">Currently Exploring</div>
+        <ul class="hb-items">
+          <li>AI tooling & developer platforms</li>
+          <li>Open to Remote / Vietnam / Asia</li>
+        </ul>
+      </div>
+
+      <!-- Skills -->
+      <div class="section">
+        <div class="section-label">Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-category">Languages</div>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Java</span>
+            <span class="tag">SQL</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-category">Backend & APIs</div>
+          <div class="skill-tags">
+            <span class="tag">FastAPI</span>
+            <span class="tag">Celery</span>
+            <span class="tag">REST</span>
+            <span class="tag">Java Gateway</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-category">Frontend</div>
+          <div class="skill-tags">
+            <span class="tag">React</span>
+            <span class="tag">HTML/CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-category">Data & Infra</div>
+          <div class="skill-tags">
+            <span class="tag">Cassandra</span>
+            <span class="tag">Kafka</span>
+            <span class="tag">Spark</span>
+            <span class="tag">Postgres</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">Ansible</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-category">AI & Tooling</div>
+          <div class="skill-tags">
+            <span class="tag ai">LLM-assisted dev</span>
+            <span class="tag ai">Automation</span>
+            <span class="tag ai">Internal tooling</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section">
+        <div class="section-label">Education</div>
+
+        <div class="edu-item">
+          <div class="edu-degree">M.S. Software Engineering</div>
+          <div class="edu-school">San Jose State University</div>
+          <div class="edu-year">2015</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree">B.A. Psychology</div>
+          <div class="edu-school">Roger Williams University</div>
+          <div class="edu-year">2012</div>
+        </div>
+      </div>
+
+    </aside>
+  </div><!-- /body -->
+
+</div><!-- /page -->
+</body>
+</html>
