@@ -502,7 +502,7 @@ footer{
         </div>
         <div class="about-card">
           <div class="ac-label">Recent Tech</div>
-          <div class="ac-value">FastAPI · Celery · Ansible · LLM-assisted dev</div>
+          <div class="ac-value">FastAPI · Celery · CI/CD · LLM-assisted dev</div>
         </div>
         <div class="about-card">
           <div class="ac-label">Education</div>
@@ -602,8 +602,6 @@ footer{
           <span class="sk-tag">Python</span>
           <span class="sk-tag">Node.js</span>
           <span class="sk-tag">Java</span>
-          <span class="sk-tag">SQL</span>
-          <span class="sk-tag">JavaScript</span>
         </div>
       </div>
       <div class="skill-card reveal">
@@ -612,16 +610,16 @@ footer{
           <span class="sk-tag">FastAPI</span>
           <span class="sk-tag">Celery</span>
           <span class="sk-tag">REST</span>
-          <span class="sk-tag">Java Gateway</span>
+          <span class="sk-tag">Java API Gateway</span>
         </div>
       </div>
-      <div class="skill-card reveal">
+      <!-- <div class="skill-card reveal">
         <div class="sk-label">Frontend</div>
         <div class="sk-tags">
           <span class="sk-tag">React</span>
           <span class="sk-tag">HTML / CSS</span>
         </div>
-      </div>
+      </div> -->
       <div class="skill-card reveal">
         <div class="sk-label">Data &amp; Infrastructure</div>
         <div class="sk-tags">
@@ -630,7 +628,7 @@ footer{
           <span class="sk-tag">Spark</span>
           <span class="sk-tag">PostgreSQL</span>
           <span class="sk-tag">Kubernetes</span>
-          <span class="sk-tag">Ansible</span>
+          <span class="sk-tag">CI/CD</span>
         </div>
       </div>
       <div class="skill-card reveal">
@@ -645,7 +643,7 @@ footer{
         <div class="sk-label">Observability</div>
         <div class="sk-tags">
           <span class="sk-tag">Splunk</span>
-          <span class="sk-tag">Dashboards</span>
+          <span class="sk-tag">Grafana</span>
           <span class="sk-tag">Lab automation</span>
         </div>
       </div>
@@ -855,7 +853,7 @@ const knowledge = {
   manager: "As Engineering Manager (2022–2024) at the SWE Lab, Sophia led SREs and automation engineers running Apple's largest internal hardware lab: 10,000+ physical devices. She drove a culture shift from reactive firefighting to proactive, data-driven ops — and built a Splunk → dashboard pipeline for real-time lab health visibility.",
   mediaprod: "At Apple Media Products (2020–2022), Sophia built internal web apps for querying and validating Play Activities data, replacing manual spreadsheet workflows. She also wrote a one-script local dev environment bootstrapper using Minikube — spinning up Kafka, Spark, and Java services as Kubernetes containers.",
   music: "Sophia contributed server-side engineering to Apple Music Friends (2016–2020), a social listening feature shipped globally to millions of users. The stack: Java API gateway, Node.js backend, Cassandra for distributed storage.",
-  skills: "Sophia's core toolkit:\n\n• Languages: Python, Node.js, Java, SQL, JavaScript\n• Backend: FastAPI, Celery, REST APIs, Java Gateway\n• Frontend: React, HTML/CSS\n• Infrastructure: Kubernetes, Ansible, Kafka, Spark, Cassandra, PostgreSQL\n• AI & tooling: LLM-assisted dev, automation pipelines, internal tooling\n• Observability: Splunk, dashboards",
+  skills: "Sophia's core toolkit:\n\n• Languages: Python, Node.js, Java, SQL, JavaScript\n• Backend: FastAPI, Celery, REST APIs, Java Gateway\n• Frontend: React, HTML/CSS\n• Infrastructure: Kubernetes, Rio (CI/CD), Kafka, Spark, Cassandra, PostgreSQL\n• AI & tooling: LLM-assisted dev, automation pipelines, internal tooling\n• Observability: Splunk, dashboards",
   education: "Sophia holds an M.S. in Software Engineering from San Jose State University (2015) and a B.A. in Psychology from Roger Williams University (2012). Her psychology background gives her an edge when designing tools that humans actually want to use.",
   open: "Yes! Sophia is actively exploring new opportunities — especially roles focused on AI tooling, developer platforms, and automation. She's open to Silicon Valley, remote, or Vietnam/Asia-Pacific positions.",
   contact: "📧 ngo_sophia@icloud.com\n💼 linkedin.com/in/sophia-ngo\n💻 github.com/sophiango",
@@ -865,10 +863,10 @@ const knowledge = {
 };
 
 const intents = [
-  { re: /current|vision pro|2024|present|fastapi|celery|ansible/i,       key: 'current' },
+  { re: /current|vision pro|2024|present|fastapi|celery|ci\/cd/i,       key: 'current' },
   { re: /manager|management|sre|lab|swe lab|10k|10,000|lead/i,          key: 'manager' },
   { re: /media product|play activit|minikube|kafka|spark/i,             key: 'mediaprod' },
-  { re: /music|friends|social|cassandra|apple music/i,                   key: 'music' },
+  { re: /music|friends|social|cassandra|apple music/i,                  key: 'music' },
   { re: /skill|tech|stack|lang|python|react|kube|postgres|node/i,       key: 'skills' },
   { re: /edu|degree|school|univ|sjsu|san jose|psychology|study/i,       key: 'education' },
   { re: /open|available|looking|hiring|job|role|opportun|work/i,        key: 'open' },
